@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- CSS only -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+</head>
+<body>
+    <!-- <h1 id="merhaba" class="d-flex fw-semibold text-uppercase mt-5 text-warning text justify-content-center display-5">Merhaba</h1>
+    <h1 class="d-flex text-primary justify-content-center display-5">Sayı tahmini oynamak ister misin ?</h1> -->
+    <h1 class="d-flex mt-5 text-secondary justify-content-center display-5">0 ile 100 arasında bir sayı tahmin et.</h1>
+    <h1 class="d-flex text-danger justify-content-center display-5">Unutma ! Sadece <span class="mx-2 fw-bold">5</span> hakkın var</h1> 
+
+    <div class="input-group d-flex m-auto w-50 mb-3">
+  <input type="number" id="sayı" class="form-control" placeholder="Tahmininizi girin..."> <br>
+  <button class="btn btn-outline-secondary" type="button" id="tahmin">Tahmin Et</button>
+</div>
+    <input type="button" id="baslat" value="Başlat">
+    <input type="button" id="tahmin" value="Tahmin Et" disabled> <br>
+    <input type="number" id="sayi" placeholder="">
+
+    <script src="./tahmin.js">
+        var rsayi,sayac,hak=5;
+        var baslat=document.querySelector("baslat");
+        var tahmin=document.querySelector("#tahmin");
+        var sayi=document.querySelector("#sayi");
+
+        baslat.onclick = function() {
+            tahmin.disabled = false;
+            rsayi = Math.floor(Math.random()*100);
+            sayac = 0;
+            window.alert(rsayı);
+        }
+        tahmin.onclick = function() {
+
+            sayac++;
+            if(rsayi!=sayi.value && sayac>hak){
+                console.log("Üzgünüm hakkınız bitti. Tekrar deneyiniz.");
+                tahmin.disabled = true;
+            }
+
+            if(rsayi==sayi.value)
+            {
+                window.alert("Tebrikler kazandınız 🙌")
+            }
+            else if(sayi.value>rsayi){
+                console.log("Biraz düşür !");
+            }
+            else
+            {
+                
+                console.log("Biraz arttır !");
+            }}
+            
+
+    </script>
+</body>
+</html>
