@@ -21,12 +21,21 @@
       Unutma ! Sadece <span class="mx-2 fw-bold">5</span> hakkın var
     </h1>
     <div class="input-group d-flex m-auto w-75 mb-3">
-      <input
+      <!-- <input
         class="btn btn-outline-secondary"
         type="button"
         id="baslat"
         value="Başlat"
-      />
+        onclick="checkForm()"
+      /> -->
+      <button
+        class="btn btn-outline-secondary"
+        type="button"
+        id="baslat"
+        value="Başlat"
+      >
+        Başlat
+      </button>
       <input
         type="number"
         id="sayi"
@@ -43,7 +52,7 @@
         Tahmin Et
       </button>
     </div>
-    <p id="error" style="text-align: center; width: 100%"></p>
+    <p id="error" style="text-align: center; width: 100%; font-weight: 700"></p>
     <script>
       var rsayi,
         sayac,
@@ -52,6 +61,7 @@
       var tahmin = document.querySelector("#tahmin");
       var sayi = document.querySelector("#sayi");
       baslat.onclick = function () {
+        console.clear(tahmin);
         tahmin.disabled = false;
         rsayi = Math.floor(Math.random() * 100);
         sayac = 0;
@@ -61,22 +71,17 @@
         var error = document.getElementById("error");
         sayac++;
         if (rsayi != sayi.value && sayac > hak) {
-          //   console.log("Üzgünüm hakkınız bitti. Tekrar deneyiniz.");
           error.innerHTML =
             "<span style='color: red;'>" +
             "Üzgünüm hakkınız bitti. Tekrar deneyiniz.</span>";
           tahmin.disabled = true;
         } else if (rsayi == sayi.value) {
-          //   window.alert("Tebrikler kazandınız 🙌");
           error.innerHTML =
             "<span style='color: red;'>" + "Tebrikler kazandınız 🙌</span>";
         } else if (sayi.value > rsayi) {
-          //   console.log("Biraz düşür !");
           error.innerHTML =
             "<span style='color: red;'>" + "Biraz Düşür !</span>";
         } else {
-          //   console.log("Biraz arttır !");
-
           error.innerHTML =
             "<span style='color: red;'>" + "Biraz Arttır !</span>";
         }
